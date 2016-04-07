@@ -1,0 +1,40 @@
+/*-_____ Basic top-level styles _____-*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+	width: 70%;
+	margin: 20px auto;
+}
+
+/*-_____ Div styles: children of div #wrapper; _____-*/
+
+.main-header {
+	height: 50px;
+	width: 100%;
+	clear: both;
+	border: 2px solid #000;
+}
+
+.select {
+	width: 24%;
+	height: 400px;
+	margin: 10px 0;
+	float: left;
+	border: 2px solid #000;
+}
+
+.playlist {
+	width: 74%;
+	height: 400px;
+	margin: 10px 0;
+	float: right;
+	border: 2px solid #000;
+}
