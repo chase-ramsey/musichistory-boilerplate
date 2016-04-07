@@ -7,6 +7,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family: sans-serif;
 }
 
 #wrapper {
@@ -16,25 +17,40 @@ body {
 
 /*-_____ Div styles: children of div #wrapper; _____-*/
 
+/* "main-header" ---------*/
+
 .main-header {
-	height: 50px;
+	height: 75px;
 	width: 100%;
+	padding: 0;
 	clear: both;
+	background: #ffb4b0;
 	border: 2px solid #000;
 }
+
+.main-header p {
+	margin: 29.3px;   /* Container height = 75px - 2px [border] = 73px | 73px - 14.4px [content height] = 58.6 | 58.6 / 2 = 29.3px */
+	font-size: .9em;  /* 16px * .9 = 14.4px */
+}
+
+/* "select" ----------*/
 
 .select {
 	width: 24%;
 	height: 400px;
 	margin: 10px 0;
 	float: left;
+	background: #4dd7fa;
 	border: 2px solid #000;
 }
+
+/* "playlist" ----------*/
 
 .playlist {
 	width: 74%;
 	height: 400px;
 	margin: 10px 0;
 	float: right;
+	background: #fefac0;
 	border: 2px solid #000;
 }
