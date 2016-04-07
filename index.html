@@ -19,17 +19,70 @@
 	</header>
 	<!-- End <header> class "main-header" -->
 
+
 	<!-- The <div> class "select" contains the form to select songs/artists/genre. -->
 	<div class="select">
 
+		<span class="named-element">
+			<label for="length">Song length:</label>
+			<input type="range" id="length" value="length" name="user_length">
+		</span>
+
+		<span class="named-element">
+			<label for="select_artist">Artist:</label>
+			<select id="select_artist">
+					<option value="cocteau_twins">Cocteau Twins</option>
+					<option value="lone">Lone</option>
+					<option value="pallbearer">Pallbearer</option>
+					<option value="prince">Prince</option>
+					<option value="red_house_painters">Red House Painters</option>
+			</select>
+		</span>
+
+		<span class="named-element">
+			<label for="select_album">Album:</label>
+			<select id="select_artist">
+					<option value="heaven_or_LV">Heaven or Las Vegas</option>
+					<option value="galaxy_garden">Galaxy Garden</option>
+					<option value="sorrow_extinction">Sorrow and Extinction</option>
+					<option value="nineteen99">1999</option>
+					<option value="one">Red House Painters I</option>
+			</select>
+		</span>
+
+		<span class="checkbox">
+			<label for="genre">Genre:</label>
+			<input type="checkbox" id="sugar_pop" value="sugar_pop" name="user_genre">
+			<label for="sugar_pop">Sugar pop</label>
+
+			<input type="checkbox" id="metaphysical_metal" value="metaphysical_metal" name="user_genre">
+			<label for="metaphysical_metal">Metaphysical metal</label>
+
+			<input type="checkbox" id="smooth_tunes" value="smooth_tunes" name="user_genre">
+			<label for="smooth_tunes">Smooth tunes</label>
+
+			<input type="checkbox" id="juicy_funk" value="juicy_funk" name="user_genre">
+			<label for="juicy_funk">Juicy funk</label>
+
+			<input type="checkbox" id="droopycore" value="droopycore" name="user_genre">
+			<label for-"droopycore">Droopycore</label>
+
+			<input type="checkbox" id="computer_prog" value="computer_prog" name="user_genre">
+			<label for="computer_prog">Computer prog</label>
+		</span>
+
+		<button>Filter</button>
+
 	</div>
 	<!-- End <div> class "select" -->
+
 
 	<!-- The <div> class "playlist" contains the songs that the form retrieves. -->
 	<div class="playlist">
 
 	</div>
 	<!-- End <div> class "playlist" -->
+
 
 </div>
 <!-- End <div> id #wrapper -->
