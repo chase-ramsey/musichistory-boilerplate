@@ -19,6 +19,10 @@ label {
 	display: block;
 }
 
+input {
+	margin: 5px;
+}
+
 /*-_____ Div styles: children of div #wrapper; _____-*/
 
 /* "main-header" ---------*/
@@ -43,6 +47,7 @@ label {
 	width: 24%;
 	height: 400px;
 	margin: 10px 0;
+	padding: 10px;
 	float: left;
 	background: #4dd7fa;
 	border: 2px solid #000;
@@ -71,6 +76,31 @@ label {
 
 .named-element label {
 	display: block;
+}
+
+.checkbox {
+	display: block;
+	float: left;
+	clear: right;
+	font-size: .8em;
+}
+
+.checkbox label {
+	display: inline;
+}
+
+.col-1 {
+	float: left;
+	clear: right;
+}
+
+.col-2 {
+	float: right;
+	clear: left;
+}
+
+.select button {
+	clear: both;
 }
 
 

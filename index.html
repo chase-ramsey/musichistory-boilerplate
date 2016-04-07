@@ -50,26 +50,46 @@
 			</select>
 		</span>
 
-		<span class="checkbox">
+
+			<!--  -->
+			<!-- The floats in the checkbox section need some serious reworking -->
+			<!--  -->
+
 			<label for="genre">Genre:</label>
-			<input type="checkbox" id="sugar_pop" value="sugar_pop" name="user_genre">
-			<label for="sugar_pop">Sugar pop</label>
 
-			<input type="checkbox" id="metaphysical_metal" value="metaphysical_metal" name="user_genre">
-			<label for="metaphysical_metal">Metaphysical metal</label>
+			<div class="col-1"> 					<!-- Created <div> class "col-1" to group first three genres in the left column -->
+				<span class="checkbox">			<!-- Created <span> class "checkbox" to group the input type="checkbox" and its <label> together. -->
+					<input type="checkbox" id="sugar_pop" value="sugar_pop" name="user_genre">
+					<label for="sugar_pop">Sugar pop</label>
+				</span>
 
-			<input type="checkbox" id="smooth_tunes" value="smooth_tunes" name="user_genre">
-			<label for="smooth_tunes">Smooth tunes</label>
+				<span class="checkbox">
+					<input type="checkbox" id="metaphysical_metal" value="metaphysical_metal" name="user_genre">
+					<label for="metaphysical_metal">Metaphysical metal</label>
+				</span>
 
-			<input type="checkbox" id="juicy_funk" value="juicy_funk" name="user_genre">
-			<label for="juicy_funk">Juicy funk</label>
+				<span class="checkbox">
+					<input type="checkbox" id="smooth_tunes" value="smooth_tunes" name="user_genre">
+					<label for="smooth_tunes">Smooth tunes</label>
+				</span>
+			</div>
 
-			<input type="checkbox" id="droopycore" value="droopycore" name="user_genre">
-			<label for-"droopycore">Droopycore</label>
+			<div class="col-2">						<!-- Created <div> class "col-2" to group the second three genres in the right column -->
+				<span class="checkbox">
+					<input type="checkbox" id="juicy_funk" value="juicy_funk" name="user_genre">
+					<label for="juicy_funk">Juicy funk</label>
+				</span>
 
-			<input type="checkbox" id="computer_prog" value="computer_prog" name="user_genre">
-			<label for="computer_prog">Computer prog</label>
-		</span>
+				<span class="checkbox">
+					<input type="checkbox" id="droopycore" value="droopycore" name="user_genre">
+					<label for-"droopycore">Droopycore</label>
+				</span>
+
+				<span class="checkbox">
+					<input type="checkbox" id="computer_prog" value="computer_prog" name="user_genre">
+					<label for="computer_prog">Computer prog</label>
+				</span>
+			</div>
 
 		<button>Filter</button>
 
