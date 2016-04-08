@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
+	font-size: .9em;
 }
 
 #wrapper {
@@ -21,6 +22,25 @@ label {
 
 input {
 	margin: 5px;
+}
+
+select {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+a:visited {
+	color: blue;
+}
+
+button {
+	display: block;
+	margin: 100px auto 15px;
+	width: 100px;
+	font-size: 1.2em;
+	border: 2px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 /*-_____ Div styles: children of div #wrapper; _____-*/
@@ -38,12 +58,11 @@ input {
 
 .main-header p {
 	margin: 29.3px;   /* Container height = 75px - 2px [border] = 73px | 73px - 14.4px [content height] = 58.6 | 58.6 / 2 = 29.3px */
-	font-size: .9em;  /* 16px * .9 = 14.4px */
-}
+}										/* font-size [inherited from <body>] 16px * .9 = 14.4px */
 
-/* "select" ----------*/
+/* "options" ----------*/
 
-.select {
+.options {
 	width: 24%;
 	height: 400px;
 	margin: 10px 0;
@@ -51,7 +70,6 @@ input {
 	float: left;
 	background: #4dd7fa;
 	border: 2px solid #000;
-	font-size: .9em;
 }
 
 /* "playlist" ----------*/
@@ -82,19 +100,14 @@ input {
 
 /* "named-element" ----------*/
 
-.named-element {
-
-}
-
-.named-element label {
-	display: block;
+.genre {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .checkbox {
 	display: block;
-	float: left;
-	clear: right;
-	font-size: .8em;
+	font-size: .7em;
 }
 
 .checkbox label {
@@ -103,16 +116,12 @@ input {
 
 .col-1 {
 	float: left;
-	clear: right;
+	margin: 0;
 }
 
 .col-2 {
 	float: right;
-	clear: left;
-}
-
-.select button {
-	clear: both;
+	margin: 0;
 }
 
 .song {
