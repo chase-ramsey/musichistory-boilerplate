@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- The <div> id #wrapper serves as the container for the child <divs> with classes "main-header", "select", and "playlist". -->
+<!-- The <div> id #wrapper serves as the container for the child <divs> with classes "main-header", "options", and "playlist". -->
 <div id="wrapper">
 
 	<!-- The <header> contains a simple navigation list and takes up 100% of the #wrapper container. -->
@@ -20,9 +20,10 @@
 	<!-- End <header> class "main-header" -->
 
 
-	<!-- The <div> class "options" contains the form to select songs/artists/genre. -->
-	<div class="options">
+	<!-- The <section> class "options" contains the form to select songs/artists/genre. -->
+	<section class="options">
 
+	<!-- The <div> class "named-element" introduced here groups form fields with their labels -->
 		<div class="named-element">
 			<label for="length">Song length:</label>
 			<input type="range" id="length" value="length" name="user_length">
@@ -90,12 +91,12 @@
 
 		<button>Filter</button>
 
-	</div>
-	<!-- End <div> class "options" -->
+	</section>
+	<!-- End <section> class "options" -->
 
 
-	<!-- The <div> class "playlist" contains the songs that the form retrieves. -->
-	<div class="playlist">
+	<!-- The <section> class "playlist" contains the songs that the form retrieves. -->
+	<section class="playlist">
 
 		<div class="song"> 									<!-- The <div> class "song" groups a songs info in the <p> elements with its title in the <h1> -->
 			<h1>"Heaven or Las Vegas"</h1>
@@ -125,8 +126,8 @@
 			<p>Genre: Droopycore</p>
 		</div>
 
-	</div>
-	<!-- End <div> class "playlist" -->
+	</section>
+	<!-- End <section> class "playlist" -->
 
 
 </div>
