@@ -95,6 +95,11 @@ button {
 	display: inline;
 }
 
+song {
+	display: block;
+	margin: 15px;
+}
+
 
 /*-_____ Other descendent class styles _____-*/
 
