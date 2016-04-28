@@ -21,7 +21,7 @@
 
 
 	<!-- The <section> class "options" contains the form to select songs/artists/genre. -->
-	<section class="options">
+	<section class="options visible">
 
 	<!-- The <div> class "named-element" introduced here groups form fields with their labels -->
 		<div class="named-element">
@@ -89,18 +89,47 @@
 				</div>
 			</div>
 
-		<button>Filter</button>
+		<button id="filter-button" class="filter-button">Filter</button>
 
 	</section>
 	<!-- End <section> class "options" -->
 
 
 	<!-- The <section> class "playlist" contains the songs that the form retrieves. -->
-	<section id="playlist" class="playlist">
+	<section id="playlist" class="playlist visible">
 
 
 	</section>
 	<!-- End <section> class "playlist" -->
+
+
+	<!-- The <section> class "add-container" contains the songs that the form retrieves. -->
+	<section id="add-container" class="add-container hidden">
+
+		<div class="add-form">
+
+			<div class="input-pair clearfix">
+				<label for="song">Song name:</label>
+				<input type="text" id="song" name="user_song">
+			</div>
+
+			<div class="input-pair clearfix">
+				<label for="artist">Artist:</label>
+				<input type="text" id="artist" name="user_artist">
+			</div>
+
+			<div class="input-pair clearfix">
+				<label for="album">Album:</label>
+				<input type="text" id="album" name="user_album">
+			</div>
+
+			<button id="add-button" class="add-button">Add</button>
+
+		</div>
+
+
+	</section>
+	<!-- End <section> class "add-form" -->
 
 
 </div>
