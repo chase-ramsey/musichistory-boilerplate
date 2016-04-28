@@ -33,6 +33,12 @@ a:visited {
 	color: blue;
 }
 
+.current,
+.current:visited {
+	color: #000;
+	text-decoration: none;
+}
+
 button {
 	display: block;
 	margin: 100px auto 15px;
