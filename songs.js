@@ -18,55 +18,55 @@ var addArtist = document.getElementById("artist");
 var addAlbum = document.getElementById("album");
 var setGenre = document.getElementById("genre");
 
-songs[songs.length] = {
-												title: "\"Heaven or Las Vegas\"",
-												artist: "Cocteau Twins",
-												album: "Heaven or Las Vegas",
-												genre: "Pop"
-											};
-songs[songs.length] = {
-												title: "\"I Would Die 4 U\"",
-												artist: "Prince",
-												album: "1999",
-												genre: "Pop"
-											};
-songs[songs.length] = {
-												title: "\"When the Levee Breaks\"",
-												artist: "Led Zeppelin",
-												album: "IV",
-												genre: "Rock"
-											};
-songs[songs.length] = {
-												title: "\"Once in a Lifetime\"",
-												artist: "Talking Heads",
-												album: "Remain in Light",
-												genre: "Pop"
-											};
-songs[songs.length] = {
-												title: "\"Borderline\"",
-												artist: "Madonna",
-												album: "Madonna",
-												genre: "Pop"
-											};
-songs[songs.length] = {
-												title: "\"Re:Definition\"",
-												artist: "Black Star",
-												album: "Mos Def and Talib Kweli are Black Star",
-												genre: "Hip Hop"
-											};
-songs[songs.length] = {
-												title: "\"Foreigner\"",
-												artist: "Pallbearer",
-												album: "Sorrow and Extinction",
-												genre: "Metal"
-											};
+// songs[songs.length] = {
+// 												title: "\"Heaven or Las Vegas\"",
+// 												artist: "Cocteau Twins",
+// 												album: "Heaven or Las Vegas",
+// 												genre: "Pop"
+// 											};
+// songs[songs.length] = {
+// 												title: "\"I Would Die 4 U\"",
+// 												artist: "Prince",
+// 												album: "Purple Rain",
+// 												genre: "Pop"
+// 											};
+// songs[songs.length] = {
+// 												title: "\"When the Levee Breaks\"",
+// 												artist: "Led Zeppelin",
+// 												album: "IV",
+// 												genre: "Rock"
+// 											};
+// songs[songs.length] = {
+// 												title: "\"Once in a Lifetime\"",
+// 												artist: "Talking Heads",
+// 												album: "Remain in Light",
+// 												genre: "Pop"
+// 											};
+// songs[songs.length] = {
+// 												title: "\"Borderline\"",
+// 												artist: "Madonna",
+// 												album: "Madonna",
+// 												genre: "Pop"
+// 											};
+// songs[songs.length] = {
+// 												title: "\"Re:Definition\"",
+// 												artist: "Black Star",
+// 												album: "Mos Def and Talib Kweli are Black Star",
+// 												genre: "Hip Hop"
+// 											};
+// songs[songs.length] = {
+// 												title: "\"Foreigner\"",
+// 												artist: "Pallbearer",
+// 												album: "Sorrow and Extinction",
+// 												genre: "Metal"
+// 											};
 
-songs[songs.length] = {
-												title: "\"Ain't That Easy\"",
-												artist: "D'Angelo",
-												album: "Black Messiah",
-												genre: "R&B"
-											};
+// songs[songs.length] = {
+// 												title: "\"Ain't That Easy\"",
+// 												artist: "D'Angelo",
+// 												album: "Black Messiah",
+// 												genre: "R&B"
+// 											};
 
 
 function inputSongs() {

@@ -1,0 +1,52 @@
+{
+	"songs": [
+		{
+			"title": "\"Heaven or Las Vegas\"",
+			"artist": "Cocteau Twins",
+			"album": "Heaven or Las Vegas",
+			"genre": "Pop"
+		},
+		{
+			"title": "\"I Would Die 4 U\"",
+			"artist": "Prince",
+			"album": "Purple Rain",
+			"genre": "Pop"
+		},
+		{
+			"title": "\"When the Levee Breaks\"",
+			"artist": "Led Zeppelin",
+			"album": "IV",
+			"genre": "Rock"
+		},
+		{
+			"title": "\"Once in a Lifetime\"",
+			"artist": "Talking Heads",
+			"album": "Remain in Light",
+			"genre": "Pop"
+		},
+		{
+			"title": "\"Borderline\"",
+			"artist": "Madonna",
+			"album": "Madonna",
+			"genre": "Pop"
+		},
+		{
+			"title": "\"Re:Definition\"",
+			"artist": "Black Star",
+			"album": "Mos Def and Talib Kweli are Black Star",
+			"genre": "Hip Hop"
+		},
+		{
+			"title": "\"Foreigner\"",
+			"artist": "Pallbearer",
+			"album": "Sorrow and Extinction",
+			"genre": "Metal"
+		},
+		{
+			"title": "\"Ain't That Easy\"",
+			"artist": "D'Angelo",
+			"album": "Black Messiah",
+			"genre": "R&B"
+		}
+	]
+}
