@@ -19,119 +19,124 @@
 	</header>
 	<!-- End <header> class "main-header" -->
 
+	<div class="wrapper-bottom clearfix">
+		<!-- The <section> class "options" contains the form to select songs/artists/genre. -->
+		<section id="options" class="options visible">
 
-	<!-- The <section> class "options" contains the form to select songs/artists/genre. -->
-	<section id="options" class="options visible">
+		<!-- The <div> class "named-element" introduced here groups form fields with their labels -->
+			<div class="named-element">
+				<label for="length">Song length:</label>
+				<input type="range" id="length" value="length" name="user_length">
+			</div>
 
-	<!-- The <div> class "named-element" introduced here groups form fields with their labels -->
-		<div class="named-element">
-			<label for="length">Song length:</label>
-			<input type="range" id="length" value="length" name="user_length">
-		</div>
+			<div class="named-element">
+				<label for="select_artist">Artist:</label>
+				<select id="select_artist">
+						<option value="cocteau_twins">Cocteau Twins</option>
+						<option value="lone">Lone</option>
+						<option value="pallbearer">Pallbearer</option>
+						<option value="prince">Prince</option>
+						<option value="red_house_painters">Red House Painters</option>
+				</select>
+			</div>
 
-		<div class="named-element">
-			<label for="select_artist">Artist:</label>
-			<select id="select_artist">
-					<option value="cocteau_twins">Cocteau Twins</option>
-					<option value="lone">Lone</option>
-					<option value="pallbearer">Pallbearer</option>
-					<option value="prince">Prince</option>
-					<option value="red_house_painters">Red House Painters</option>
-			</select>
-		</div>
+			<div class="named-element">
+				<label for="select_album">Album:</label>
+				<select id="select_artist">
+						<option value="heaven_or_LV">Heaven or Las Vegas</option>
+						<option value="galaxy_garden">Galaxy Garden</option>
+						<option value="sorrow_extinction">Sorrow and Extinction</option>
+						<option value="nineteen99">1999</option>
+						<option value="one">Red House Painters I</option>
+				</select>
+			</div>
 
-		<div class="named-element">
-			<label for="select_album">Album:</label>
-			<select id="select_artist">
-					<option value="heaven_or_LV">Heaven or Las Vegas</option>
-					<option value="galaxy_garden">Galaxy Garden</option>
-					<option value="sorrow_extinction">Sorrow and Extinction</option>
-					<option value="nineteen99">1999</option>
-					<option value="one">Red House Painters I</option>
-			</select>
-		</div>
+				<div class="genre">
+					<label for="genre">Genre:</label>
 
-			<div class="genre">
-				<label for="genre">Genre:</label>
+					<div class="col-1"> 					<!-- Created <div> class "col-1" to group first three genres in the left column -->
+						<div class="checkbox">			<!-- Created <div> class "checkbox" to group the input type="checkbox" and its <label> together. -->
+							<input type="checkbox" id="sugar_pop" value="sugar_pop" name="user_genre">
+							<label for="sugar_pop">Sugar pop</label>
+						</div>
 
-				<div class="col-1"> 					<!-- Created <div> class "col-1" to group first three genres in the left column -->
-					<div class="checkbox">			<!-- Created <div> class "checkbox" to group the input type="checkbox" and its <label> together. -->
-						<input type="checkbox" id="sugar_pop" value="sugar_pop" name="user_genre">
-						<label for="sugar_pop">Sugar pop</label>
+						<div class="checkbox">
+							<input type="checkbox" id="doom" value="doom" name="user_genre">
+							<label for="doom">Doom</label>
+						</div>
+
+						<div class="checkbox">
+							<input type="checkbox" id="smooth_tunes" value="smooth_tunes" name="user_genre">
+							<label for="smooth_tunes">Smooth tunes</label>
+						</div>
 					</div>
 
-					<div class="checkbox">
-						<input type="checkbox" id="doom" value="doom" name="user_genre">
-						<label for="doom">Doom</label>
-					</div>
+					<div class="col-2">						<!-- Created <div> class "col-2" to group the second three genres in the right column -->
+						<div class="checkbox">
+							<input type="checkbox" id="juicy_funk" value="juicy_funk" name="user_genre">
+							<label for="juicy_funk">Juicy funk</label>
+						</div>
 
-					<div class="checkbox">
-						<input type="checkbox" id="smooth_tunes" value="smooth_tunes" name="user_genre">
-						<label for="smooth_tunes">Smooth tunes</label>
+						<div class="checkbox">
+							<input type="checkbox" id="droopycore" value="droopycore" name="user_genre">
+							<label for-"droopycore">Droopycore</label>
+						</div>
+
+						<div class="checkbox">
+							<input type="checkbox" id="computer_prog" value="computer_prog" name="user_genre">
+							<label for="computer_prog">Computer prog</label>
+						</div>
 					</div>
 				</div>
 
-				<div class="col-2">						<!-- Created <div> class "col-2" to group the second three genres in the right column -->
-					<div class="checkbox">
-						<input type="checkbox" id="juicy_funk" value="juicy_funk" name="user_genre">
-						<label for="juicy_funk">Juicy funk</label>
-					</div>
+			<button id="filter-button" class="filter-button">Filter</button>
 
-					<div class="checkbox">
-						<input type="checkbox" id="droopycore" value="droopycore" name="user_genre">
-						<label for-"droopycore">Droopycore</label>
-					</div>
+		</section>
+		<!-- End <section> class "options" -->
 
-					<div class="checkbox">
-						<input type="checkbox" id="computer_prog" value="computer_prog" name="user_genre">
-						<label for="computer_prog">Computer prog</label>
-					</div>
+
+		<!-- The <section> class "playlist" contains the songs that the form retrieves. -->
+		<section id="playlist" class="playlist visible">
+
+
+		</section>
+		<!-- End <section> class "playlist" -->
+
+
+		<!-- The <section> class "add-container" contains the songs that the form retrieves. -->
+		<section id="add-container" class="add-container hidden">
+
+			<div class="add-form">
+
+				<div class="input-pair clearfix">
+					<label for="song">Song name:</label>
+					<input type="text" id="song" name="user_song">
 				</div>
+
+				<div class="input-pair clearfix">
+					<label for="artist">Artist:</label>
+					<input type="text" id="artist" name="user_artist">
+				</div>
+
+				<div class="input-pair clearfix">
+					<label for="album">Album:</label>
+					<input type="text" id="album" name="user_album">
+				</div>
+
+				<div class="input-pair clearfix">
+					<label for="genre">Genre:</label>
+					<input type="text" id="genre" name="user_genre">
+				</div>
+
+				<button id="add-button" class="add-button">Add</button>
+
 			</div>
 
-		<button id="filter-button" class="filter-button">Filter</button>
 
-	</section>
-	<!-- End <section> class "options" -->
+		</section>
+		<!-- End <section> class "add-form" -->
 
-
-	<!-- The <section> class "playlist" contains the songs that the form retrieves. -->
-	<section id="playlist" class="playlist visible">
-
-
-	</section>
-	<!-- End <section> class "playlist" -->
-
-
-	<!-- The <section> class "add-container" contains the songs that the form retrieves. -->
-	<section id="add-container" class="add-container hidden">
-
-		<div class="add-form">
-
-			<div class="input-pair clearfix">
-				<label for="song">Song name:</label>
-				<input type="text" id="song" name="user_song">
-			</div>
-
-			<div class="input-pair clearfix">
-				<label for="artist">Artist:</label>
-				<input type="text" id="artist" name="user_artist">
-			</div>
-
-			<div class="input-pair clearfix">
-				<label for="album">Album:</label>
-				<input type="text" id="album" name="user_album">
-			</div>
-
-			<button id="add-button" class="add-button">Add</button>
-
-		</div>
-
-
-	</section>
-	<!-- End <section> class "add-form" -->
-
-
+	</div> <!-- End div class "wrapper-bottom" -->
 </div>
 <!-- End <div> id #wrapper -->
 

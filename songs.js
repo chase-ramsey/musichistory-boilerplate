@@ -16,28 +16,68 @@ buttonAdd.addEventListener("click", addMusic);
 var addSong = document.getElementById("song");
 var addArtist = document.getElementById("artist");
 var addAlbum = document.getElementById("album");
+var setGenre = document.getElementById("genre");
 
-songs[songs.length] = "Heaven or Las Vegas - by Cocteau Twins on the album Heaven or Las Vegas";
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-songs[songs.length] = "Foreigner - by Pallbearer on the album Sorrow and Extinction";
+songs[songs.length] = {
+												title: "\"Heaven or Las Vegas\"",
+												artist: "Cocteau Twins",
+												album: "Heaven or Las Vegas",
+												genre: "Pop"
+											};
+songs[songs.length] = {
+												title: "\"I Would Die 4 U\"",
+												artist: "Prince",
+												album: "1999",
+												genre: "Pop"
+											};
+songs[songs.length] = {
+												title: "\"When the Levee Breaks\"",
+												artist: "Led Zeppelin",
+												album: "IV",
+												genre: "Rock"
+											};
+songs[songs.length] = {
+												title: "\"Once in a Lifetime\"",
+												artist: "Talking Heads",
+												album: "Remain in Light",
+												genre: "Pop"
+											};
+songs[songs.length] = {
+												title: "\"Borderline\"",
+												artist: "Madonna",
+												album: "Madonna",
+												genre: "Pop"
+											};
+songs[songs.length] = {
+												title: "\"Re:Definition\"",
+												artist: "Black Star",
+												album: "Mos Def and Talib Kweli are Black Star",
+												genre: "Hip Hop"
+											};
+songs[songs.length] = {
+												title: "\"Foreigner\"",
+												artist: "Pallbearer",
+												album: "Sorrow and Extinction",
+												genre: "Metal"
+											};
 
-for (var i = 0; i < songs.length; i++) {
-	songs[i] = songs[i].replace(">", "-");
-	songs[i] = songs[i].replace("*", "");
-	songs[i] = songs[i].replace("@", "");
-	songs[i] = songs[i].replace("!", "");
-	songs[i] = songs[i].replace("(", "");
-	console.log("song" + i + ": ", songs[i]);
-}
+songs[songs.length] = {
+												title: "\"Ain't That Easy\"",
+												artist: "D'Angelo",
+												album: "Black Messiah",
+												genre: "R&B"
+											};
+
 
 function inputSongs() {
 	playlistDiv.innerHTML = "";
 	for (var i = 0; i < songs.length; i++) {
-		playlistDiv.innerHTML += "<song>" + songs[i] + "</song>";
+		playlistDiv.innerHTML += "<div class='song'>" +
+														 "<span class='song-title'>" + songs[i].title + "</span>" +
+														 "<span class='song-print'>" + songs[i].artist + "</span>" +
+														 "<span class='song-print album-title'>" + songs[i].album + "</span>" +
+														 "<span class='song-print'>" + songs[i].genre + "</span>" +
+														 "</div>";
 	}
 }
 
@@ -70,15 +110,18 @@ function goToAdd() {
 
 	listMusicLink.classList.remove("current");
 	addMusicLink.classList.add("current");
+}
 
+function Song(title, artist, album, genre) {
+	this.title = title;
+	this.artist = artist;
+	this.album = album;
+	this.genre = genre;
 }
 
 function addMusic() {
-	var song = addSong.value;
-	var artist = addArtist.value;
-	var album = addAlbum.value;
-	var songString = "\"" + song +"\"" + " - by " + artist + " on the album " + album;
-	songs.push(songString);
+	var newSong = new Song(addSong.value, addArtist.value, addAlbum.value, setGenre.value)
+	songs.push(newSong);
 	inputSongs();
 }
 

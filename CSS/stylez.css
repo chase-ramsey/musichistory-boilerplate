@@ -16,6 +16,12 @@ body {
 	margin: 20px auto;
 }
 
+.wrapper-bottom {
+	width: 100%;
+	min-height: 400px;
+	margin: 10px 0;
+}
+
 label {
 	display: block;
 }
@@ -76,10 +82,11 @@ a:visited {
 
 .options {
 	width: 24%;
-	height: 400px;
-	margin: 10px 0;
+	height: 100%;
+	min-height: 400px;
 	padding: 10px;
 	float: left;
+	display: inline-block;
 	background: #4dd7fa;
 	border: 2px solid #000;
 }
@@ -88,28 +95,39 @@ a:visited {
 
 .playlist {
 	width: 74%;
-	height: 400px;
-	margin: 10px 0;
+	height: 100%;
+	min-height: 400px;
 	padding: 0;
 	float: right;
 	background: #fefac0;
 	border: 2px solid #000;
 }
 
-.playlist h1 {
-	font-weight: normal;
+.playlist p {
+	display: inline;
+}
+
+.song {
+	display: block;
+	margin: 15px;
+}
+
+.song-title {
+	display: block;
+	font-size: 1.3em;
 	margin-bottom: 5px;
 	color: #785616;
 	padding: 0;
 }
 
-.playlist p {
-	display: inline;
+.album-title {
+	font-style: italic;
 }
 
-song {
-	display: block;
-	margin: 15px;
+.song-print {
+	display: inline;
+	padding: 0 20px;
+	border-right: 2px solid #000;
 }
 
 /* "add-container" ----------*/
