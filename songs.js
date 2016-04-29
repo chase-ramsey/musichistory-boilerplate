@@ -77,8 +77,10 @@ function inputSongs() {
 														 "<span class='song-print'>" + songs[i].artist + "</span>" +
 														 "<span class='song-print album-title'>" + songs[i].album + "</span>" +
 														 "<span class='song-print'>" + songs[i].genre + "</span>" +
+														 "<button class='delete'>Delete</button>" +
 														 "</div>";
 	}
+	addDeleteListener();
 }
 
 function goToList() {
@@ -123,6 +125,17 @@ function addMusic() {
 	var newSong = new Song(addSong.value, addArtist.value, addAlbum.value, setGenre.value)
 	songs.push(newSong);
 	inputSongs();
+}
+
+function addDeleteListener() {
+	var buttonDelete = document.getElementsByClassName("delete");
+	for (var i = 0; i < songs.length; i++) {
+		buttonDelete.item(i).addEventListener("click", deleteSong);
+	}
+}
+
+function deleteSong(clickEvent) {
+	playlist.removeChild(clickEvent.target.parentNode);
 }
 
 inputSongs();
