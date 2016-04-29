@@ -1,3 +1,5 @@
+
+// Var list will hold the data from song-list.json when the XHR loads
 var list;
 
 // Variables holding the divs for the basic HTML containers, "options", "playlist", and "add-container"
