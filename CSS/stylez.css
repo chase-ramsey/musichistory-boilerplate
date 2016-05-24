@@ -206,18 +206,3 @@ a:visited {
 	float: right;
 	margin: 0;
 }
-
-
-/*-_____ Visible/Hidden _____-*/
-
-.visible {
-	display: block;
-}
-
-.hidden {
-	display: none;
-}
-
-
-
-

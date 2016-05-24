@@ -6,62 +6,50 @@
 
 // Variables holding the divs for the basic HTML containers, "options", "playlist", and "add-container"
 
-	var playlistDiv = document.getElementById("playlist");
-	var optionsDiv = document.getElementById("options");
-	var addFormDiv = document.getElementById("add-container");
+	$playlistDiv = $("#playlist");
+	$optionsDiv = $("#options");
+	$addFormDiv = $("#add-container");
+	$addFormDiv.hide();
 
 
 // Variables holding the links in the top container with event listeners to run associated functions
 // Also, variable holding the add button that triggers the addMusic() function
 
-	var listMusicLink = document.getElementById("list-music");
-	listMusicLink.addEventListener("click", goToList);
+	$listMusicLink = $("#list-music");
+	$listMusicLink.click(goToList);
 
-	var addMusicLink = document.getElementById("add-music");
-	addMusicLink.addEventListener("click", goToAdd);
+	$addMusicLink = $("#add-music");
+	$addMusicLink.click(goToAdd);
 
-	var buttonAdd = document.getElementById("add-button");
-	buttonAdd.addEventListener("click", addMusic);
+	$buttonAdd = $("#add-button");
+	$buttonAdd.click(addMusic);
 
 
 // Variables holding the input fields in the add form
 
-	var addSong = document.getElementById("song");
-	var addArtist = document.getElementById("artist");
-	var addAlbum = document.getElementById("album");
-	var setGenre = document.getElementById("genre");
+	$addSong = $("#song");
+	$addArtist = $("#artist");
+	$addAlbum = $("#album");
+	$setGenre = $("#genre");
 
 
 // Functions for swapping in/out the add-container
 
 	function goToList() {
-
-		addFormDiv.classList.remove("visible");
-		addFormDiv.classList.add("hidden");
-
-		optionsDiv.classList.remove("hidden");
-		optionsDiv.classList.add("visible");
-
-		playlistDiv.classList.remove("hidden");
-		playlistDiv.classList.add("visible");
-
-		listMusicLink.classList.add("current");
-		addMusicLink.classList.remove("current");
+		$addFormDiv.hide();
+		$optionsDiv.show();
+		$playlistDiv.show();
+		$listMusicLink.addClass("current");
+		$addMusicLink.removeClass("current");
 	}
 
 	function goToAdd() {
 
-		playlistDiv.classList.remove("visible");
-		playlistDiv.classList.add("hidden");
-
-		optionsDiv.classList.remove("visible");
-		optionsDiv.classList.add("hidden");
-
-		addFormDiv.classList.remove("hidden");
-		addFormDiv.classList.add("visible");
-
-		listMusicLink.classList.remove("current");
-		addMusicLink.classList.add("current");
+		$playlistDiv.hide();
+		$optionsDiv.hide();
+		$addFormDiv.show();
+		$listMusicLink.removeClass("current");
+		$addMusicLink.addClass("current");
 	}
 
 
@@ -84,7 +72,7 @@
 // Delete functions
 
 	function addDeleteListener() {
-		var buttonDelete = document.getElementsByClassName("delete");
+		var $buttonDelete = $(".delete");
 		for (var i = 0; i < list.songs.length; i++) {
 			buttonDelete.item(i).addEventListener("click", deleteSong);
 		}
@@ -100,7 +88,7 @@
 	function inputSongs() {
 		// playlistDiv.innerHTML = "";
 		for (var i = 0; i < list.songs.length; i++) {
-			playlistDiv.innerHTML += "<div class='song'>" +
+			$playlistDiv.innerHTML += "<div class='song'>" +
 															 "<span class='song-title'>" + list.songs[i].title + "</span>" +
 															 "<span class='song-print'>" + list.songs[i].artist + "</span>" +
 															 "<span class='song-print album-title'>" + list.songs[i].album + "</span>" +
@@ -108,9 +96,8 @@
 															 "<button class='delete'>Delete</button>" +
 															 "</div>";
 		}
-		addDeleteListener();
-		var buttonMore = document.getElementById("more-songs");
-		buttonMore.addEventListener("click", moreSongs);
+		$(".delete").click(deleteSong);
+		$("more-songs").click(moreSongs);
 	}
 
 // XHR Request that populates the songs array with data
