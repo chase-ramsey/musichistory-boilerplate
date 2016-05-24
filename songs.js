@@ -6,31 +6,31 @@
 
 // Variables holding the divs for the basic HTML containers, "options", "playlist", and "add-container"
 
-	$playlistDiv = $("#playlist");
-	$optionsDiv = $("#options");
-	$addFormDiv = $("#add-container");
+	var $playlistDiv = $("#playlist");
+	var $optionsDiv = $("#options");
+	var $addFormDiv = $("#add-container");
 	$addFormDiv.hide();
 
 
 // Variables holding the links in the top container with event listeners to run associated functions
 // Also, variable holding the add button that triggers the addMusic() function
 
-	$listMusicLink = $("#list-music");
+	var $listMusicLink = $("#list-music");
 	$listMusicLink.click(goToList);
 
-	$addMusicLink = $("#add-music");
+	var $addMusicLink = $("#add-music");
 	$addMusicLink.click(goToAdd);
 
-	$buttonAdd = $("#add-button");
+	var $buttonAdd = $("#add-button");
 	$buttonAdd.click(addMusic);
 
 
 // Variables holding the input fields in the add form
 
-	$addSong = $("#song");
-	$addArtist = $("#artist");
-	$addAlbum = $("#album");
-	$setGenre = $("#genre");
+	var $addSong = $("#song");
+	var $addArtist = $("#artist");
+	var $addAlbum = $("#album");
+	var $setGenre = $("#genre");
 
 
 // Functions for swapping in/out the add-container
@@ -63,8 +63,8 @@
 	}
 
 	function addMusic() {
-		var newSong = new Song(addSong.value, addArtist.value, addAlbum.value, setGenre.value)
-		songs.push(newSong);
+		var newSong = new Song($addSong.val(), $addArtist.val(), $addAlbum.val(), $setGenre.val());
+		list.push(newSong);
 		inputSongs();
 	}
 
@@ -86,18 +86,20 @@
 // Define function that formats songs and inputs them in the DOM
 
 	function inputSongs() {
-		// playlistDiv.innerHTML = "";
-		for (var i = 0; i < list.songs.length; i++) {
-			$playlistDiv.innerHTML += "<div class='song'>" +
-															 "<span class='song-title'>" + list.songs[i].title + "</span>" +
-															 "<span class='song-print'>" + list.songs[i].artist + "</span>" +
-															 "<span class='song-print album-title'>" + list.songs[i].album + "</span>" +
-															 "<span class='song-print'>" + list.songs[i].genre + "</span>" +
-															 "<button class='delete'>Delete</button>" +
-															 "</div>";
+		var buildHTML = "";
+		for (var i = 0; i < list.length; i++) {
+			buildHTML += `<div class="song">
+									 <span class="song-title">${list[i].title}</span>
+									 <span class="song-print">${list[i].artist}</span>
+									 <span class="song-print album-title">${list[i].album}</span>
+									 <span class="song-print">${list[i].genre}</span>
+									 <button class="delete">Delete</button>
+									 </div>`;
 		}
+		buildHTML += `<button class="more-songs">More</button>`;
+		$playlistDiv.html(buildHTML);
 		$(".delete").click(deleteSong);
-		$("more-songs").click(moreSongs);
+		$(".more-songs").click(moreSongs);
 	}
 
 // XHR Request that populates the songs array with data
@@ -111,12 +113,14 @@
 // Functions/etc. for adding data from new json file
 
 	function fillSongs() {
-		list = JSON.parse(this.responseText);
-		inputSongs();
+		data = JSON.parse(this.responseText);
+		data.songs.forEach(function(song){
+			list.push(song);
+		});
+		inputSongs($playlistDiv.html());
 	}
 
 	function moreSongs() {
-		console.log("click");
 		var requestMore = new XMLHttpRequest();
 		requestMore.addEventListener("load", fillSongs);
 		requestMore.open("GET", "song-list-2.json");
