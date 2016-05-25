@@ -103,27 +103,40 @@
 
 // XHR Request that populates the songs array with data
 
-	var requestSongs = new XMLHttpRequest();
-	requestSongs.addEventListener("load", fillSongs);
-	requestSongs.open("GET", "song-list.json");
-	requestSongs.send();
+	var fetchData = function(jsonUrl) {
+		return new Promise((resolve, reject) => {
+			$.ajax({
+				url: jsonUrl
+			}).done((data) => resolve(data))
+				.fail((error) => reject(error));
+			});
+	};
+
+	fetchData("song-list.json")
+		.then((data) => {
+			fillSongs(data);
+		});
+
+	// var requestSongs = new XMLHttpRequest();
+	// requestSongs.addEventListener("load", fillSongs);
+	// requestSongs.open("GET", "song-list.json");
+	// requestSongs.send();
 
 
 // Functions/etc. for adding data from new json file
 
-	function fillSongs() {
-		data = JSON.parse(this.responseText);
-		data.songs.forEach(function(song){
+	function fillSongs(jsonData) {
+		jsonData.songs.forEach(function(song){
 			list.push(song);
 		});
 		inputSongs($playlistDiv.html());
 	}
 
 	function moreSongs() {
-		var requestMore = new XMLHttpRequest();
-		requestMore.addEventListener("load", fillSongs);
-		requestMore.open("GET", "song-list-2.json");
-		requestMore.send();
+		fetchData("song-list-2.json")
+			.then((data) => {
+				fillSongs(data);
+			});
 	}
 
 
