@@ -2,6 +2,7 @@
 // Var list will hold the data from song-list.json when the XHR loads
 
 	var list = [];
+	var idCounter = 0;
 
 
 // Variables holding the divs for the basic HTML containers, "options", "playlist", and "add-container"
@@ -68,18 +69,12 @@
 		inputSongs();
 	}
 
-
-// Delete functions
-
-	function addDeleteListener() {
-		var $buttonDelete = $(".delete");
-		for (var i = 0; i < list.songs.length; i++) {
-			buttonDelete.item(i).addEventListener("click", deleteSong);
-		}
-	}
-
 	function deleteSong(clickEvent) {
-		playlist.removeChild(clickEvent.target.parentNode);
+		let toDeleteId = $(this).parent().attr("id");
+		list = list.filter(function(song) {
+			return song.id !== toDeleteId;
+		});
+		inputSongs();
 	}
 
 
@@ -88,7 +83,11 @@
 	function inputSongs() {
 		var buildHTML = "";
 		for (var i = 0; i < list.length; i++) {
-			buildHTML += `<div class="song">
+			if (list[i].id === undefined) {
+				list[i].id = `song${idCounter}`;
+				idCounter++;
+			}
+			buildHTML += `<div id="${list[i].id}" class="song">
 									 <span class="song-title">${list[i].title}</span>
 									 <span class="song-print">${list[i].artist}</span>
 									 <span class="song-print album-title">${list[i].album}</span>
