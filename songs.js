@@ -117,12 +117,6 @@
 			fillSongs(data);
 		});
 
-	// var requestSongs = new XMLHttpRequest();
-	// requestSongs.addEventListener("load", fillSongs);
-	// requestSongs.open("GET", "song-list.json");
-	// requestSongs.send();
-
-
 // Functions/etc. for adding data from new json file
 
 	function fillSongs(jsonData) {
