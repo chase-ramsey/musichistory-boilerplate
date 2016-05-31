@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/chase-ramsey/musichistory-boilerplate#readme",
   "devDependencies": {
+    "gulp-sass": "^2.3.1",
     "jquery": "^2.2.4"
   }
 }
