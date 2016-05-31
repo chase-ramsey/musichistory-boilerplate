@@ -1,7 +1,7 @@
 
 // Var list will hold the data from song-list.json when the XHR loads
 
-	var list = [];
+	var list = {};
 	var idCounter = 0;
 
 
@@ -71,10 +71,11 @@
 
 	function deleteSong(clickEvent) {
 		let toDeleteId = $(this).parent().attr("id");
-		list = list.filter(function(song) {
-			return song.id !== toDeleteId;
-		});
-		inputSongs();
+		console.log("toDeleteId: ", toDeleteId);
+		$.ajax({
+			method: "DELETE",
+			url: `https://cr13-music-history.firebaseio.com/songs/${toDeleteId}.json`
+		}).done(fetchData);
 	}
 
 
@@ -82,16 +83,12 @@
 
 	function inputSongs() {
 		var buildHTML = "";
-		for (var i = 0; i < list.length; i++) {
-			if (list[i].id === undefined) {
-				list[i].id = `song${idCounter}`;
-				idCounter++;
-			}
-			buildHTML += `<div id="${list[i].id}" class="song">
-									 <span class="song-title">${list[i].title}</span>
-									 <span class="song-print">${list[i].artist}</span>
-									 <span class="song-print album-title">${list[i].album}</span>
-									 <span class="song-print">${list[i].genre}</span>
+		for (var key in list.songs) {
+			buildHTML += `<div id="${key}" class="song">
+									 <span class="song-title">${list.songs[key].title}</span>
+									 <span class="song-print">${list.songs[key].artist}</span>
+									 <span class="song-print album-title">${list.songs[key].album}</span>
+									 <span class="song-print">${list.songs[key].genre}</span>
 									 <button class="delete">Delete</button>
 									 </div>`;
 		}
@@ -103,31 +100,33 @@
 
 // XHR Request that populates the songs array with data
 
-	var fetchData = function(jsonUrl) {
-		return new Promise((resolve, reject) => {
+	// var fetchData = function() {
+	// 	return new Promise((resolve, reject) => {
+	// 		$.ajax({
+	// 			url: "https://cr13-music-history.firebaseio.com/.json"
+	// 		}).done((data) => resolve(data))
+	// 			.fail((error) => reject(error));
+	// 		});
+	// };
+
+	var fetchData = function() {
 			$.ajax({
-				url: jsonUrl
-			}).done((data) => resolve(data))
+				url: "https://cr13-music-history.firebaseio.com/.json"
+			}).done(fillSongs)
 				.fail((error) => reject(error));
-			});
 	};
 
-	fetchData("song-list.json")
-		.then((data) => {
-			fillSongs(data);
-		});
-
+fetchData()
 // Functions/etc. for adding data from new json file
 
 	function fillSongs(jsonData) {
-		jsonData.songs.forEach(function(song){
-			list.push(song);
-		});
+		list = jsonData;
+		console.log("list: ", list);
 		inputSongs($playlistDiv.html());
-	}
+		};
 
 	function moreSongs() {
-		fetchData("song-list-2.json")
+		fetchData()
 			.then((data) => {
 				fillSongs(data);
 			});
