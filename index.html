@@ -104,36 +104,39 @@
 
 
 		<!-- The <section> class "add-container" contains the songs that the form retrieves. -->
-		<section id="add-container" class="add-container hidden">
+		<div class="container-fluid">
 
-			<div class="add-form">
+				<section id="add-container" class="add-container">
+					<div class="row">
+						<div class="column col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-xs-4">
+							<form class="add-form">
+								<div class="form-group">
+									<label for="song" class="control-label">Song name:</label>
+									<input type="text" id="song" name="user_song" class="form-control">
+								</div>
 
-				<div class="input-pair clearfix">
-					<label for="song">Song name:</label>
-					<input type="text" id="song" name="user_song">
-				</div>
+								<div class="form-group">
+									<label for="artist" class="control-label">Artist:</label>
+									<input type="text" id="artist" name="user_artist" class="form-control">
+								</div>
 
-				<div class="input-pair clearfix">
-					<label for="artist">Artist:</label>
-					<input type="text" id="artist" name="user_artist">
-				</div>
+								<div class="form-group">
+									<label for="album" class="control-label">Album:</label>
+									<input type="text" id="album" name="user_album" class="form-control">
+								</div>
 
-				<div class="input-pair clearfix">
-					<label for="album">Album:</label>
-					<input type="text" id="album" name="user_album">
-				</div>
+								<div class="form-group">
+									<label for="genre" class="control-label">Genre:</label>
+									<input type="text" id="genre" name="user_genre" class="form-control">
+								</div>
+							</form>
 
-				<div class="input-pair clearfix">
-					<label for="genre">Genre:</label>
-					<input type="text" id="genre" name="user_genre">
-				</div>
+							<button id="add-button" class="add-button btn btn-success center-block">Add</button>
+						</div>
+					</div>
+				</section>
 
-				<button id="add-button" class="add-button">Add</button>
-
-			</div>
-
-
-		</section>
+		</div>
 		<!-- End <section> class "add-form" -->
 
 	</div> <!-- End div class "wrapper-bottom" -->
