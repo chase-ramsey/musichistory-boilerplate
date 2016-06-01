@@ -7,52 +7,13 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
-	font-size: .9em;
-}
-
-#wrapper {
-	width: 70%;
-	margin: 20px auto;
-}
-
-.wrapper-bottom {
-	width: 100%;
-	min-height: 400px;
-	margin: 10px 0;
-}
-
-label {
-	display: block;
-}
-
-input {
-	margin: 5px;
-}
-
-select {
-	margin: 5px;
-	margin-bottom: 10px;
-}
-
-a:visited {
-	color: blue;
+	background: #D1626F;
 }
 
 .current,
 .current:visited {
-	color: #000;
+	color: #34495e;
 	text-decoration: none;
-}
-
-.filter-button {
-	display: block;
-	margin: 100px auto 15px;
-	width: 100px;
-	font-size: 1.2em;
-	border: 2px solid #000;
-	border-radius: 5px;
-	cursor: pointer;
 }
 
 .clearfix::after {
@@ -67,79 +28,86 @@ a:visited {
 
 .main-header {
 	height: 75px;
-	width: 100%;
 	padding: 0;
 	clear: both;
-	background: #ffb4b0;
+	background: #ecf0f1;
 	border: 2px solid #000;
 }
 
-.main-header p {
-	margin: 29.3px;   /* Container height = 75px - 2px [border] = 73px | 73px - 14.4px [content height] = 58.6 | 58.6 / 2 = 29.3px */
-}										/* font-size [inherited from <body>] 16px * .9 = 14.4px */
+.header-links {
+	margin: 20px;
+}
 
 /* "options" ----------*/
 
 .options {
-	width: 24%;
-	height: 100%;
 	min-height: 400px;
 	padding: 10px;
-	float: left;
-	display: inline-block;
-	background: #4dd7fa;
-	border: 2px solid #000;
+	background: #ecf0f1;
+	border-radius: 4px;
+	border: 1px solid #e7e7e7;
+}
+
+select {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+label {
+	color: #34495e;
+}
+
+input[type="range"] {
+	margin-bottom: 10px;
+}
+
+.checkbox input[type="checkbox"] {   /* Override Bootstrap checkbox margin-left */
+	margin-left: 0;
+}
+
+.filter-button {
+	margin-top: 30px;
 }
 
 /* "playlist" ----------*/
 
 .playlist {
-	width: 74%;
-	height: 100%;
 	min-height: 400px;
 	padding: 0;
 	padding-bottom: 30px;
-	float: right;
-	background: #fefac0;
-	border: 2px solid #000;
-	position: relative;
+	background: #34495E;
+	border: 1px solid #34495e;
+	border-radius: 4px;
+	/*position: relative;*/
 }
 
-.playlist p {
-	display: inline;
+.song-card {
+	min-height: 200px;
+	background: #ecf0f1;
+	border: 1px solid #e7e7e7;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
 
-.song {
-	display: block;
-	margin: 20px;
+.dl-horizontal dt {
+	width: initial;
+	text-align: initial;
 }
 
-.song-title {
-	display: block;
-	font-size: 1.3em;
-	margin-bottom: 5px;
-	color: #785616;
-	padding: 0;
+.dl-horizontal dd {
+	margin-left: 60px;
 }
 
 .album-title {
 	font-style: italic;
 }
 
-.song-print {
-	display: inline;
-	padding: 0 20px;
-	border-right: 2px solid #000;
-}
-
-.delete {
-	margin: 0 20px;
-}
-
 .more-songs {
-	position: absolute;
-	left: 20px;
-	bottom: 20px;
+	display: block;
+	clear: both;
+	margin: 25px;
 }
 
 /* "add-container" ----------*/
@@ -176,33 +144,4 @@ a:visited {
 	border-radius: 5px;
 	cursor: pointer;
 	margin: 20px auto;
-}
-
-
-/*-_____ Other descendent class styles _____-*/
-
-/* "named-element" ----------*/
-
-.genre {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.checkbox {
-	display: block;
-	font-size: .7em;
-}
-
-.checkbox label {
-	display: inline;
-}
-
-.col-1 {
-	float: left;
-	margin: 0;
-}
-
-.col-2 {
-	float: right;
-	margin: 0;
 }

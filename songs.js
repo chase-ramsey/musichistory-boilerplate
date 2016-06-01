@@ -84,13 +84,17 @@
 	function inputSongs() {
 		var buildHTML = "";
 		for (var key in list.songs) {
-			buildHTML += `<div id="${key}" class="song">
-									 <span class="song-title">${list.songs[key].title}</span>
-									 <span class="song-print">${list.songs[key].artist}</span>
-									 <span class="song-print album-title">${list.songs[key].album}</span>
-									 <span class="song-print">${list.songs[key].genre}</span>
-									 <button class="delete">Delete</button>
-									 </div>`;
+			buildHTML += `<div class="column col-lg-4">
+					<div id="${key}" class="song-card">
+						<h4>${list.songs[key].title}</h4>
+						<dl class="dl-horizontal">
+							<dt>Artist</dt><dd>${list.songs[key].artist}</dd>
+							<dt>Album</dt><dd class="album-title">${list.songs[key].album}</dd>
+							<dt>Genre</dt><dd>${list.songs[key].genre}</dd>
+						</dl>
+						<button class="delete btn btn-danger center-block">Delete</button>
+					</div>
+				</div>`;
 		}
 		buildHTML += `<button class="more-songs">More</button>`;
 		$playlistDiv.html(buildHTML);
