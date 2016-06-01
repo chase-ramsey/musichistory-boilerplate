@@ -41,7 +41,7 @@ body {
 /* "options" ----------*/
 
 .options {
-	min-height: 400px;
+	min-height: 500px;
 	padding: 10px;
 	background: #ecf0f1;
 	border-radius: 4px;
@@ -72,13 +72,18 @@ input[type="range"] {
 /* "playlist" ----------*/
 
 .playlist {
-	min-height: 400px;
+	height: 500px;
 	padding: 20px;
 	padding-bottom: 30px;
 	background: #34495E;
 	border: 1px solid #34495e;
 	border-radius: 4px;
 	margin-right: 0;
+}
+
+.table-wrap {
+	height: 450px;
+	overflow: scroll;
 }
 
 .table {

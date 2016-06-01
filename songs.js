@@ -70,7 +70,7 @@
 	}
 
 	function deleteSong(clickEvent) {
-		let toDeleteId = $(this).parent().attr("id");
+		let toDeleteId = $(this).closest("tr").attr("id");
 		console.log("toDeleteId: ", toDeleteId);
 		$.ajax({
 			method: "DELETE",
@@ -83,6 +83,7 @@
 
 	function inputSongs() {
 		var rowHTML = "";
+		$("tbody").empty();
 		for (var key in list.songs) {
 			rowHTML = `<tr id="${key}">
 					<td>${list.songs[key].title}</td>
@@ -93,22 +94,9 @@
 				</tr>`;
 			$("tbody").append(rowHTML);
 		}
-		buildHTML += `<button class="more-songs">More</button>`;
-		// $playlistDiv.html(buildHTML);
 		$(".delete").click(deleteSong);
 		$(".more-songs").click(moreSongs);
 	}
-
-// XHR Request that populates the songs array with data
-
-	// var fetchData = function() {
-	// 	return new Promise((resolve, reject) => {
-	// 		$.ajax({
-	// 			url: "https://cr13-music-history.firebaseio.com/.json"
-	// 		}).done((data) => resolve(data))
-	// 			.fail((error) => reject(error));
-	// 		});
-	// };
 
 	var fetchData = function() {
 			$.ajax({
@@ -118,12 +106,13 @@
 	};
 
 fetchData();
+
 // Functions/etc. for adding data from new json file
 
 	function fillSongs(jsonData) {
 		list = jsonData;
 		console.log("list: ", list);
-		inputSongs($playlistDiv.html());
+		inputSongs();
 		};
 
 	function moreSongs() {
