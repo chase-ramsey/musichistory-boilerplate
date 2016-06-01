@@ -82,22 +82,19 @@
 // Define function that formats songs and inputs them in the DOM
 
 	function inputSongs() {
-		var buildHTML = "";
+		var rowHTML = "";
 		for (var key in list.songs) {
-			buildHTML += `<div class="column col-lg-4">
-					<div id="${key}" class="song-card">
-						<h4>${list.songs[key].title}</h4>
-						<dl class="dl-horizontal">
-							<dt>Artist</dt><dd>${list.songs[key].artist}</dd>
-							<dt>Album</dt><dd class="album-title">${list.songs[key].album}</dd>
-							<dt>Genre</dt><dd>${list.songs[key].genre}</dd>
-						</dl>
-						<button class="delete btn btn-danger center-block">Delete</button>
-					</div>
-				</div>`;
+			rowHTML = `<tr id="${key}">
+					<td>${list.songs[key].title}</td>
+					<td>${list.songs[key].artist}</td>
+					<td class="album-title">${list.songs[key].album}</td>
+					<td>${list.songs[key].genre}</td>
+					<td><button class="delete btn btn-danger center-block">Delete</button></td>
+				</tr>`;
+			$("tbody").append(rowHTML);
 		}
 		buildHTML += `<button class="more-songs">More</button>`;
-		$playlistDiv.html(buildHTML);
+		// $playlistDiv.html(buildHTML);
 		$(".delete").click(deleteSong);
 		$(".more-songs").click(moreSongs);
 	}
@@ -120,7 +117,7 @@
 				.fail((error) => reject(error));
 	};
 
-fetchData()
+fetchData();
 // Functions/etc. for adding data from new json file
 
 	function fillSongs(jsonData) {

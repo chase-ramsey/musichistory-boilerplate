@@ -73,7 +73,7 @@ input[type="range"] {
 
 .playlist {
 	min-height: 400px;
-	padding: 0;
+	padding: 20px;
 	padding-bottom: 30px;
 	background: #34495E;
 	border: 1px solid #34495e;
@@ -81,23 +81,9 @@ input[type="range"] {
 	margin-right: 0;
 }
 
-.song-card {
-	min-height: 200px;
+.table {
 	background: #ecf0f1;
-	border: 1px solid #e7e7e7;
-	padding: 10px;
-	margin: 10px;
 	border-radius: 4px;
-	box-shadow: 0 2px 4px rgba(0,0,0,.2);
-}
-
-.dl-horizontal dt {
-	width: initial;
-	text-align: initial;
-}
-
-.dl-horizontal dd {
-	margin-left: 60px;
 }
 
 .album-title {
